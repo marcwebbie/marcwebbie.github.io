@@ -10,9 +10,9 @@ excerpt_link: Read More
 menu:
   Home: /
   Archive: /archive
-  Images: /images
+  # Images: /images
   # Wiki: /wiki/2014-10-28-wiki/
-  Favorites: /favorites
+  # Favorites: /favorites
   Github: https://github.com/marcwebbie
   Twitter: https://twitter.com/marcwebbie
 
@@ -22,9 +22,9 @@ menu:
 navclass:
   Home: icon-home
   Archive: icon-news
-  Images: icon-image
+  # Images: icon-image
   # Wiki: icon-wiki
-  Favorites: icon-Favorites
+  # Favorites: icon-Favorites
   Github: icon-github
   Twitter: icon-twitter
 
