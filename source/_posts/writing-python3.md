@@ -89,11 +89,12 @@ except ImportError:
     from mock i
     ```
 
-From your modules that have to use the compatible code you could import
+From your modules that have to use the compatible code you could do:
 
 ```python
 # .downloader.py
 from .python_two import input, range
+
 
 # ... your code goes here
 ```
