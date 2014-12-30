@@ -1,0 +1,40 @@
+# config
+cover: /img/img-bg.jpg
+logo: /img/logo.svg
+bio: 'A developer, emacs user, free software lover. Spends most of his time with his family and friends or as a consultant at ThoughtWorks. Likes chess, games and coding.'
+
+# Content
+excerpt_link: Read More
+
+# Header  nav
+menu:
+  Home: /
+  Archive: /archive
+  Images: /images
+  # Wiki: /wiki/2014-10-28-wiki/
+  Favorites: /favorites
+  Github: https://github.com/marcwebbie
+  Twitter: https://twitter.com/marcwebbie
+
+##Private: /private
+
+# nav.fonticon.css
+navclass:
+  Home: icon-home
+  Archive: icon-news
+  Images: icon-image
+  # Wiki: icon-wiki
+  Favorites: icon-Favorites
+  Github: icon-github
+  Twitter: icon-twitter
+
+##Private: icon-lock
+rss: /atom.xml
+
+# Miscellaneous
+google_analytics:
+favicon: /favicon.png
+twitter: marcwebbie
+google_plus:
+fb_admins:
+fb_app_id:
