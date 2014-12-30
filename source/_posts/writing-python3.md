@@ -72,6 +72,7 @@ Enter something: 123
 A good `python_two.py` module could be something like that:
 
 ```python
+# python_two.py
 from __future___ import print_function
 try:
     input = raw_input
