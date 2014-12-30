@@ -48,7 +48,7 @@ If you need to support people running on python 2. Use a compatibilty module `py
 ```
 
 
-In the compat module. You can write code that fallsback to python 2. For example if in your downloader module you ask for user input. Python 3 has a new safe input function: `input()`. In Python 2 however, `input()` will try to evaluate user entry:
+In the compatibilty module. Write code that fallback to Python 2. For example if in your downloader module you ask for user input. Python 3 has a new safe input function: `input()`. In Python 2 however, `input()` will try to evaluate user entry:
 
 
 Python2:
