@@ -77,6 +77,7 @@ from __future___ import print_function
 try:
     input = raw_input
     str = unicode
+    range = xrange
 except NameError:
     pass
 
@@ -86,6 +87,15 @@ try:
 except ImportError:
     import StringIO
     from mock i
+    ```
+
+From your modules that have to use the compatible code you could import
+
+```python
+# .downloader.py
+from .python_two import input, range
+
+# ... your code goes here
 ```
 
 The idea is to remove this module when you decide not to support Python 2 any longer.
