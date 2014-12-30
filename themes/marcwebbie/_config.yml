@@ -32,7 +32,7 @@ navclass:
 rss: /atom.xml
 
 # Miscellaneous
-google_analytics:
+google_analytics: UA-58094309-1
 favicon: /favicon.png
 twitter: marcwebbie
 google_plus:
