@@ -1,7 +1,7 @@
 # config
 cover: /img/img-bg.jpg
 logo: /img/logo.svg
-bio: 'A developer, emacs user, free software lover. Spends most of his time with his family and friends or as a consultant at ThoughtWorks. Likes chess, games and coding.'
+bio: 'A developer, emacs user, free software enthusiast. Spends most of his time with his family and friends or as a consultant at ThoughtWorks. Likes chess, games and coding.'
 
 # Content
 excerpt_link: Read More
@@ -10,7 +10,7 @@ excerpt_link: Read More
 menu:
   Home: /
   Archive: /archive
-  # Images: /images
+  Images: /images
   # Wiki: /wiki/2014-10-28-wiki/
   # Favorites: /favorites
   Github: https://github.com/marcwebbie
@@ -22,7 +22,7 @@ menu:
 navclass:
   Home: icon-home
   Archive: icon-news
-  # Images: icon-image
+  Images: icon-image
   # Wiki: icon-wiki
   # Favorites: icon-Favorites
   Github: icon-github
