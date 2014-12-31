@@ -66,32 +66,90 @@
 <h2 id="Why_Python_3?">Why Python 3?</h2>
 <p>Python 3 is the future of python. With Python 3 you will get all the <a href="http://asmeurer.github.io/python3-presentation/slides.html#1" target="_blank" rel="external">cool features</a> that are being added to the language. Core python developers have been focusing in Python 3 for a while now, and you should be using those features into your projects.</p>
 <p>Around the web I’ve seen many guesses on why Python 3 wasn’t fully adopted until now. This <a href="http://programmers.stackexchange.com/a/63935" target="_blank" rel="external">answer</a> on StackExchange is quite a good starting point to know more.</p>
-<h2 id="Starting_With_Python3">Starting With Python3</h2>
-<p>When you are starting a new project. Start it in Python 3. You may hear people say to you: <em>“Don’t use Python 3, library x and y is not supported”</em> or worse, <em>“Why Python 3? Python 2 is much better”</em>. Don’t listen to those comments. Most of great libraries and frameworks <a href="https://python3wos.appspot.com/" target="_blank" rel="external">supports Python 3</a> already. If they are not. They are probably working on <a href="Twisted is already">fixing this</a> situation right now. And you could help them if you have some sparetime. Check their issue pages. Starting a project in Python 2 today is probably not a good idea.</p>
-<p>If you need to support people running on python 2. Use a compatibilty module <code>python_two.py</code> inside your package. For example:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">├── README.rst</div><div class="line">├── docs</div><div class="line">├── MANIFEST.in</div><div class="line">├── myprogram</div><div class="line">│   ├── __init__.<span class="keyword">py</span></div><div class="line">│   ├── __main__.<span class="keyword">py</span></div><div class="line">│   ├── downloader.<span class="keyword">py</span></div><div class="line">│   ├── python_two.<span class="keyword">py</span>  # &lt;== This <span class="keyword">is</span> the compatibility module</div><div class="line">│   └── utils.<span class="keyword">py</span></div><div class="line">├── requirements.txt</div><div class="line">├── setup.cfg</div><div class="line">├── setup.<span class="keyword">py</span></div><div class="line">├── testing.<span class="keyword">py</span></div><div class="line">└── tests</div></pre></td></tr></table></figure>
+<h2 id="Starting_With_Python_3">Starting With Python 3</h2>
+<p>When you are starting a new project. Start it in <strong><code>Python3</code></strong>. You may hear people say to you: <em>“Don’t use Python 3, library x and y is not supported”</em> or worse, <em>“Why Python 3? Python 2 is much better”</em>…</p>
+<p>Most of great libraries and frameworks <a href="https://python3wos.appspot.com/" target="_blank" rel="external">supports Python 3</a> already. If they are not. They are probably working on <a href="Twisted is already">fixing this</a> situation right now. And you could help them if you have some sparetime. Check their issue pages. Starting a project in <strong><code>Python2</code></strong> today is probably not a good idea.</p>
+<p>The first step to start a project in python <strong><code>Python3</code></strong> should be adopting the <strong>“Python3 Mindset”</strong>. Having a “Python3 Mindset” means, thinking in <strong><code>Python3</code></strong> without coding the way that used to code in <strong><code>Python2</code></strong>. The more the time goes by, more libraries will be ported/available to <strong><code>Python3</code></strong>, so the “burden” of having to support <strong><code>Python2</code></strong> code progressively fades away.</p>
+<h3 id="Imcompatible_Python_2_Code">Imcompatible Python 2 Code</h3>
+<p>Python 3 has a new safe input function: <code>input()</code>. In Python 2 however, <code>input()</code> evaluates user entry:</p>
+<h5 id="Python2"><code>Python2</code></h5>
+<pre><code><span class="input"><span class="prompt">&gt;&gt;&gt;</span> entry = input(<span class="string">"Enter something: "</span>)</span>
+<span class="input"><span class="prompt">Enter something: 123
+&gt;&gt;&gt;</span> type(entry)</span>
+&lt;type <span class="string">'int'</span>&gt;
+</code></pre><h5 id="Python3"><code>Python3</code></h5>
+<pre><code><span class="input"><span class="prompt">&gt;&gt;&gt;</span> entry = input(<span class="string">"Enter something: "</span>)</span>
+<span class="input"><span class="prompt">Enter something: 123
+&gt;&gt;&gt;</span> type(entry)</span>
+&lt;type <span class="string">'str'</span>&gt;
+</code></pre><p>If for example you need to have the same functionality from Python 3 <code>input</code> function in Python 2, you should use <code>raw_input(&quot;Enter something: &quot;)</code> instead.</p>
+<h5 id="Python2-1"><code>Python2</code></h5>
+<pre><code><span class="input"><span class="prompt">&gt;&gt;&gt;</span> entry = raw_input(<span class="string">"Enter something: "</span>)</span>
+<span class="input"><span class="prompt">Enter something: 123
+&gt;&gt;&gt;</span> type(entry)</span>
+&lt;type <span class="string">'str'</span>&gt;
+</code></pre><h3 id="Using_a_compatibility_module">Using a compatibility module</h3>
+<p>If you need to support Python 2, maybe because a library you have to use wasn’t still fully ported to Python 3. You could use a compatibilty module inside your packages.</p>
+<p>For example for a compatibility module <code>python_two.py</code>:</p>
+<pre><code>. mymodule
+├── README.rst
+├── docs
+├── MANIFEST.in
+├── myprogram
+│   ├── __init__.<span class="keyword">py</span>
+│   ├── downloader.<span class="keyword">py</span>
+│   ├── python_two.<span class="keyword">py</span>  # &lt;== This <span class="keyword">is</span> the compatibility module
+│   └── utils.<span class="keyword">py</span>
+├── requirements.txt
+├── setup.cfg
+├── setup.<span class="keyword">py</span>
+└── tests
+    └── test.<span class="keyword">py</span>
+</code></pre><p>Write code that fallback to Python 2. An example <code>python_two.py</code> could be:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> __future___ <span class="keyword">import</span> print_function</div><div class="line">...</div><div class="line"><span class="keyword">try</span>:</div><div class="line">    input = raw_input</div><div class="line">    str = unicode</div><div class="line">    range = xrange</div><div class="line"><span class="keyword">except</span> NameError:</div><div class="line">    <span class="keyword">pass</span></div><div class="line">...</div><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="keyword">from</span> io <span class="keyword">import</span> StringIO</div><div class="line">    <span class="keyword">from</span> unittest.mock <span class="keyword">import</span> Mock</div><div class="line"><span class="keyword">except</span> ImportError:</div><div class="line">    <span class="keyword">import</span> StringIO</div><div class="line">    <span class="keyword">from</span> mock i</div></pre></td></tr></table></figure>
 
-<p>In the compatibilty module. Write code that fallback to Python 2. For example if in your downloader module you ask for user input. Python 3 has a new safe input function: <code>input()</code>. In Python 2 however, <code>input()</code> will try to evaluate user entry:</p>
-<p>Python2:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="prompt">&gt;&gt;&gt; </span>entry = input(<span class="string">"Enter something: "</span>)</div><div class="line">Enter something: <span class="number">123</span></div><div class="line"><span class="prompt">&gt;&gt;&gt; </span>type(entry)</div><div class="line">&lt;type <span class="string">'int'</span>&gt;</div></pre></td></tr></table></figure>
+<p>If in the <code>downloader.py</code> module you ask for user input:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> .python_two <span class="keyword">import</span> input, range, str</div></pre></td></tr></table></figure>
 
-<p>Python3:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="prompt">&gt;&gt;&gt; </span>entry = input(<span class="string">"Enter something: "</span>)</div><div class="line">Enter something: <span class="number">123</span></div><div class="line"><span class="prompt">&gt;&gt;&gt; </span>type(entry)</div><div class="line">&lt;type <span class="string">'str'</span>&gt;</div></pre></td></tr></table></figure>
+<p>-OR-</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> .python_two <span class="keyword">import</span> *</div></pre></td></tr></table></figure>
 
-<p>A good <code>python_two.py</code> module could be something like that:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># python_two.py</span></div><div class="line"><span class="keyword">from</span> __future___ <span class="keyword">import</span> print_function</div><div class="line"><span class="keyword">try</span>:</div><div class="line">    input = raw_input</div><div class="line">    str = unicode</div><div class="line">    range = xrange</div><div class="line"><span class="keyword">except</span> NameError:</div><div class="line">    <span class="keyword">pass</span></div><div class="line"></div><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="keyword">from</span> io <span class="keyword">import</span> StringIO</div><div class="line">    <span class="keyword">from</span> unittest.mock <span class="keyword">import</span> Mock</div><div class="line"><span class="keyword">except</span> ImportError:</div><div class="line">    <span class="keyword">import</span> StringIO</div><div class="line">    <span class="keyword">from</span> mock i</div></pre></td></tr></table></figure>
+<p>Using the compatibility module with our earlier example:</p>
+<h5 id="Python2-1"><code>Python2</code></h5>
+<pre><code><span class="input"><span class="prompt">&gt;&gt;&gt;</span> from .python_two import input</span>
+<span class="input"><span class="prompt">&gt;&gt;&gt;</span> entry = input(<span class="string">"Enter something: "</span>)</span>
+<span class="input"><span class="prompt">Enter something: 123
+&gt;&gt;&gt;</span> type(entry)</span>
+&lt;type <span class="string">'str'</span>&gt;
+</code></pre><p>The idea is to remove this module when you decide not to support Python 2 any longer.</p>
+<h3 id="Using_2to3_on_Python_2_code">Using 2to3 on Python 2 code</h3>
+<p>You can also use a tool called <a href="http://www.diveintopython3.net/porting-code-to-python-3-with-2to3.html" target="_blank" rel="external">2to3</a> to port your code. Python 3 comes with 2to3 out of the box.</p>
+<p>An example module <code>mymodule.py</code>:</p>
+<h5 id="Python2-1"><code>Python2</code></h5>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="comment"># ...</span></div><div class="line">value = range(<span class="number">1</span>, <span class="number">10</span>)[-<span class="number">1</span>]</div><div class="line"><span class="comment"># ...</span></div><div class="line"><span class="keyword">if</span> value &lt;&gt; <span class="number">9</span>:</div><div class="line">    <span class="keyword">print</span> <span class="string">"Value %s is not 9"</span> % value</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    <span class="keyword">print</span> <span class="string">"Value is 9"</span></div><div class="line"><span class="comment"># ...</span></div><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="keyword">assert</span> <span class="number">1</span> == <span class="number">2</span></div><div class="line"><span class="keyword">except</span> AssertionError, e:</div><div class="line">    <span class="keyword">print</span> e</div><div class="line">    <span class="keyword">print</span> urllib.urlopen(<span class="string">'https://docs.python.org/2/library/exceptions.html'</span>).read()</div></pre></td></tr></table></figure>
 
-<p>From your modules that have to use the compatible code you could do:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># .downloader.py</span></div><div class="line"><span class="keyword">from</span> .python_two <span class="keyword">import</span> input, range</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># ... your code goes here</span></div></pre></td></tr></table></figure>
+<p>When you run <strong>2to3</strong> <code>2to3 mymodule.py -w</code> the results are:</p>
+<h5 id="Python3-1"><code>Python3</code></h5>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib.request, urllib.parse, urllib.error</div><div class="line"><span class="comment"># ...</span></div><div class="line">value = list(range(<span class="number">1</span>, <span class="number">10</span>))[-<span class="number">1</span>]</div><div class="line"><span class="comment"># ...</span></div><div class="line"><span class="keyword">if</span> value != <span class="number">9</span>:</div><div class="line">    print(<span class="string">"Value %s is not 9"</span> % value)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    print(<span class="string">"Value is 9"</span>)</div><div class="line"><span class="comment"># ...</span></div><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="keyword">assert</span> <span class="number">1</span> == <span class="number">2</span></div><div class="line"><span class="keyword">except</span> AssertionError <span class="keyword">as</span> e:</div><div class="line">    print(e)</div><div class="line">    print(urllib.request.urlopen(<span class="string">'https://docs.python.org/2/library/exceptions.html'</span>).read())</div></pre></td></tr></table></figure>
 
-<p>The idea is to remove this module when you decide not to support Python 2 any longer.</p>
-<h2 id="Start_your_code_in_Python_2_then…">Start your code in Python 2 then…</h2>
-<p>Please <strong>don’t</strong>! If you can do it, start it on Python 3. It will be much harder to port your project to Python 3 once the project gets larger. Check this <a href="https://speakerdeck.com/pyconslides/python-3-dot-3-trust-me-its-better-than-python-2-dot-7-by-dr-brett-cannon" target="_blank" rel="external">presentation</a> by Brett Cannon to see why Python 3 is much better or his <a href="https://www.youtube.com/watch?v=f_6vDi7ywuA" target="_blank" rel="external">video</a> presentation if you prefer.</p>
+<p><strong>2to3</strong> is a great tool to migrate existing <code>Python2</code> code. If you project is still in its early days, <strong>2to3</strong> may come handy as a tool.</p>
+<h3 id="Start_your_code_in_Python_2_then…">Start your code in Python 2 then…</h3>
+<p>Please, <strong>NOT</strong> so fast! If you have the option, start with Python 3 in mind. It will be much harder to port your project to Python 3 once the project gets larger. Check this <a href="https://speakerdeck.com/pyconslides/python-3-dot-3-trust-me-its-better-than-python-2-dot-7-by-dr-brett-cannon" target="_blank" rel="external">presentation</a> by Brett Cannon to see why Python 3 is much better or his <a href="https://www.youtube.com/watch?v=f_6vDi7ywuA" target="_blank" rel="external">video</a> presentation if you prefer.</p>
+<h2 id="Workflow">Workflow</h2>
+<p>An example workflow for a Python 3 code that is backward compatible with Python 2 would be:</p>
+<ol>
+<li>Write <strong><code>Python3</code></strong> code.</li>
+<li>Run your tests/code using <strong><code>Python2</code></strong>.<ul>
+<li>If broken, update your <code>python_two.py</code> module and go to step 2.</li>
+</ul>
+</li>
+<li>Commit and go to step 1.</li>
+</ol>
 <h2 id="Learn_more">Learn more</h2>
-<p>There are a large amount of information about Python 3 around the web:</p>
+<p>There is a large amount of information about Python 3 around the web:</p>
 <ul>
 <li><a href="https://wiki.python.org/moin/Python2orPython3" target="_blank" rel="external">Python wiki</a></li>
-<li>Porting to python 3</li>
+<li><a href="">Porting to python 3</a></li>
 <li><a href="https://python3wos.appspot.com/" target="_blank" rel="external">Python 3 Wall of Super Powers</a></li>
 <li><a href="http://pyvideo.org" target="_blank" rel="external">PyVideos</a></li>
 </ul>
@@ -110,12 +168,12 @@
     </section>
     <footer class="post-footer">
       <section class="author">
-    <h4>Marcwebbie</h4>
-    <p>A developer, emacs user, free software lover. Spends most of his time with his family and friends or as a consultant at ThoughtWorks. Likes chess, games and coding.</p>
+    <h4>@Marcwebbie</h4>
+    <p>A developer, emacs user, free software enthusiast. Spends most of his time with his family and friends or as a consultant at ThoughtWorks. Likes chess, games and coding.</p>
 </section>
       <section class="share">
     <h4>Share this post</h4>
-    <a class="icon-sina-weibo" href="http://v.t.sina.com.cn/share/share.php?title=A developer, emacs user, free software lover. Spends most of his time with his family and friends or as a consultant at ThoughtWorks. Likes chess, games and coding. ?url=http://marcwebbie.github.io/2014/12/29/writing-python3/" target="_blank">
+    <a class="icon-sina-weibo" href="http://v.t.sina.com.cn/share/share.php?title=A developer, emacs user, free software enthusiast. Spends most of his time with his family and friends or as a consultant at ThoughtWorks. Likes chess, games and coding. ?url=http://marcwebbie.github.io/2014/12/29/writing-python3/" target="_blank">
         <span class="hidden">weibo</span>
     </a>
     <a class="icon-twitter" href="http://twitter.com/share?url=http://marcwebbie.github.io/2014/12/29/writing-python3/"
@@ -202,6 +260,8 @@
           <a class="icon-home"  href="/"><span>Home</span></a>
 
           <a class="icon-news"  href="/archive"><span>Archive</span></a>
+
+          <a class="icon-image"  href="/images"><span>Images</span></a>
 
           <a class="icon-github"  href="https://github.com/marcwebbie"><span>Github</span></a>
 
