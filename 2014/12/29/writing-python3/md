@@ -30,7 +30,7 @@ When you are starting a new project. Start it in **`Python3`**. You may hear peo
 
 Most of great libraries and frameworks [supports Python 3](https://python3wos.appspot.com/) already. If they are not. They are probably working on [fixing this](Twisted is already) situation right now. And you could help them if you have some sparetime. Check their issue pages. Starting a project in **`Python2`** today is probably not a good idea.
 
-The first step to start a project in python **`Python3`** should be adopting the **"Python3 Mindset"**. Having a "Python3 Mindset" means, thinking in **`Python3`** without coding the way that used to code in **`Python2`**. The more the time goes by, more libraries will be ported/available to **`Python3`**, so the "burden" of having to support **`Python2`** code progressively fades away.
+The first step to start a project in python **`Python3`** should be adopting the **"Python3 Mindset"**. Having a "Python3 Mindset" means, thinking in **`Python3`** without coding the way that you used to in **`Python2`**. The more the time goes by, more libraries will be ported/available to **`Python3`**, so the "burden" of having to support **`Python2`** code progressively fades away.
 
 
 ### Imcompatible Python 2 Code
