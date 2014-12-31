@@ -177,9 +177,9 @@ except AssertionError as e:
 
 **2to3** is a great tool to migrate existing `Python2` code. If you project is still in its early days, **2to3** may come handy as a tool.
 
-### Start your code in Python 2 then...
+### Start your project in Python 2 then...
 
-Please, **NOT** so fast! If you have the option, start with Python 3 in mind. It will be much harder to port your project to Python 3 once the project gets larger. Check this [presentation](https://speakerdeck.com/pyconslides/python-3-dot-3-trust-me-its-better-than-python-2-dot-7-by-dr-brett-cannon) by Brett Cannon to see why Python 3 is much better or his [video](https://www.youtube.com/watch?v=f_6vDi7ywuA) presentation if you prefer.
+Please, **NOT** so fast! If you have options, start with Python 3 from day one. It will be much harder to port your project to Python 3 once the project gets larger. Check this [presentation](https://speakerdeck.com/pyconslides/python-3-dot-3-trust-me-its-better-than-python-2-dot-7-by-dr-brett-cannon) by Brett Cannon to see why Python 3 is much better or his [video](https://www.youtube.com/watch?v=f_6vDi7ywuA) presentation if you prefer.
 
 
 ## Workflow
