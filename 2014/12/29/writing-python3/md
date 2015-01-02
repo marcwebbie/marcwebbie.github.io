@@ -187,9 +187,11 @@ Please, **NOT** so fast! If you have options, start with Python 3 from day one. 
 An example workflow for a Python 3 code that is backward compatible with Python 2 would be:
 
 1. Write **`Python3`** code.
-2. Run your tests/code using **`Python2`**.
+2. Run your tests/code in **`Python3`**
+   + If broken, go to step 1.
+3. Run your tests/code using **`Python2`**.
    + If broken, update your `python_two.py` module and go to step 2.
-3. Commit and go to step 1.
+4. Commit and go to step 1.
 
 
 ## Learn more
