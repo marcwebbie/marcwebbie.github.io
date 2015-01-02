@@ -1,6 +1,5 @@
 title: Write your code in Python 3
 date: 2014-12-29 21:52:21
-updated: 2014-12-29 22:17:38
 category:
 - Programming
 tags:
@@ -188,16 +187,17 @@ An example workflow for a Python 3 code that is backward compatible with Python 
 
 1. Write **`Python3`** code.
 2. Run your tests/code in **`Python3`**
-   + If broken, go to step 1.
+   + If broken, go to **step 1**.
 3. Run your tests/code using **`Python2`**.
-   + If broken, update your `python_two.py` module and go to step 2.
-4. Commit and go to step 1.
+   + If broken, update your `python_two.py` module and go to **step 2**.
+4. Commit and go to **step 1**.
 
 
 ## Learn more
 
 There is a large amount of information about Python 3 around the web:
 
++ [Python 3 Wall of Superpowers](https://python3wos.appspot.com/)
 + [Python wiki](https://wiki.python.org/moin/Python2orPython3)
 + [Porting to python 3]()
 + [Python 3 Wall of Super Powers](https://python3wos.appspot.com/)
