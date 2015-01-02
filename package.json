@@ -5,7 +5,7 @@
   "dependencies": {
     "hexo-renderer-ejs": "*",
     "hexo-renderer-stylus": "*",
-    "hexo-renderer-marked": "*",
+    "hexo-renderer-marked": "~0.1.0",
     "hexo-renderer-pandoc": "0.0.8"
   }
 }
