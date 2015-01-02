@@ -200,7 +200,6 @@ There is a large amount of information about Python 3 around the web:
 + [Python 3 Wall of Superpowers](https://python3wos.appspot.com/)
 + [Python wiki](https://wiki.python.org/moin/Python2orPython3)
 + [Porting to python 3]()
-+ [Python 3 Wall of Super Powers](https://python3wos.appspot.com/)
 + [PyVideos](http://pyvideo.org)
 
 There are also some great books on the subject:
