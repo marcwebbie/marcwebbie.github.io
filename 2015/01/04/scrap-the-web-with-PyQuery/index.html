@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>Scrap The Web With PyQuery | Marcwebbie</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <meta name="generator" content="Marcwebbie">
+
+  
+  
+  
+
+  
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body class="home-template">
+<div id="perspective" class="perspective effect-movedown">
+  <div class="container">
+    <!-- wrapper -->
+    <div class="wrapper">
+
+      <header class="site-head"  style="background: #24282b url(/img/img-bg.jpg) 0 -20%" >
+    <div class="vertical">
+        <div class="site-head-content inner">
+             <a class="blog-logo" href="/"><img src="/img/logo.svg" alt="Blog Logo"/></a> 
+            <h1 class="blog-title">Marcwebbie</h1>
+            <h2 class="blog-description"><button id="showMenu">Show Menu</button></h2>
+        </div>
+    </div>
+</header>
+
+      
+
+<main class="content" role="main">
+  <article class="post">
+    <span class="post-meta">
+      <time datetime="2015-01-04T19:57:29.000Z" itemprop="datePublished">
+          Jan 4 2015
+      </time>
+    
+    
+    | 
+    <a href='/tags/Programming/'>Programming</a>,
+    
+    <a href='/tags/Python/'>Python</a>,
+    
+    <a href='/tags/Scraping/'>Scraping</a>,
+    
+    <a href='/tags/Web-mining/'>Web mining</a>
+    
+    
+</span>
+    <h1 class="post-title">Scrap The Web With PyQuery</h1>
+    <section class="post-content">
+      <p>[Introduction about scraping]</p>
+<p>We will create a project fooscraper the tools needed:</p>
+<ul>
+<li><a href="https://pypi.python.org/pypi/pip/" target="_blank" rel="external">pip</a></li>
+<li><a href="https://pypi.python.org/pypi/virtualenv" target="_blank" rel="external">virtualenv</a></li>
+</ul>
+<h2 id="PyQuery">PyQuery</h2>
+<p>[Talk About PyQuery]</p>
+<h2 id="Getting_started">Getting started</h2>
+<p>Let’s setup pyquery…</p>
+<h3 id="Create_and_activate_a_virtualenv">Create and activate a virtualenv</h3>
+<p>Let’s use a virtualenv for isolating our tools</p>
+<pre><code>virtualenv scraping
+<span class="built_in">cd</span> scraping
+<span class="built_in">source</span> bin/activate
+</code></pre><h4 id="layout_project">layout project</h4>
+<p>Now with the active virtualenv, let’s create our project structure</p>
+<pre><code><span class="built_in">mkdir</span> fooscraper
+<span class="keyword">cd</span> fooscraper
+<span class="built_in">mkdir</span> fooscraper
+touch fooscraper/__init__.<span class="keyword">py</span>
+touch fooscraper/archive.<span class="keyword">py</span>
+touch requirements.txt
+touch tests.<span class="keyword">py</span>
+</code></pre><h4 id="lets_write_our_tests">lets write our tests</h4>
+<figure class="highlight python"><figcaption><span>tests.py</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> unittest</div><div class="line"><span class="keyword">from</span> fooscraper.archive <span class="keyword">import</span> find_links</div><div class="line"><span class="comment"># ...</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">FooScraperTests</span><span class="params">(unittest.TestCase)</span>:</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_fooscraper_returns_list_of_links</span><span class="params">(self)</span>:</span></div><div class="line">        url = <span class="string">"something"</span></div><div class="line">        found = find_links(url)</div><div class="line">        self.assertIsInstance(found, list)</div><div class="line">        self.assertTrue(all(<span class="keyword">True</span> <span class="keyword">for</span> url <span class="keyword">in</span> found <span class="keyword">if</span> url.startswith(<span class="string">"http"</span>)))</div></pre></td></tr></table></figure>
+
+
+    </section>
+    <footer class="post-footer">
+      <section class="author">
+    <h4>@Marcwebbie</h4>
+    <p>A developer, emacs user, free software enthusiast. Spends most of his time with his family and friends or as a consultant at ThoughtWorks. Likes chess, games and coding.</p>
+</section>
+      <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-sina-weibo" href="http://v.t.sina.com.cn/share/share.php?title=A developer, emacs user, free software enthusiast. Spends most of his time with his family and friends or as a consultant at ThoughtWorks. Likes chess, games and coding. ?url=http://marcwebbie.io/2015/01/04/scrap-the-web-with-PyQuery/" target="_blank">
+        <span class="hidden">weibo</span>
+    </a>
+    <a class="icon-twitter" href="http://twitter.com/share?url=http://marcwebbie.io/2015/01/04/scrap-the-web-with-PyQuery/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://marcwebbie.io/2015/01/04/scrap-the-web-with-PyQuery/"
+       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://marcwebbie.io/2015/01/04/scrap-the-web-with-PyQuery/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+    </footer>
+  </article>
+  <nav class="pagination" role="pagination">
+    
+    <span class="icon-logo">•</span>
+    
+    <a class="older-posts" href="/2015/01/04/design-a-plugin-structure-in-python/">
+        design a plugin structure in python →
+    </a>
+    
+</nav>
+
+  <div id="comment" class="comments-area">
+    <h4 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h4>
+    
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    
+</div>
+
+</main>
+
+
+      
+<footer class="site-footer">
+  
+  <div class="inner">
+     <section class="copyright">All content copyright <a href="/">Marcwebbie</a> &copy; 2014 &bull; All rights reserved.</section>
+  </div>
+</footer>
+
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+<script type="text/javascript" src="/js/menu.js"></script>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-58207692-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'marcwebbie';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+  </div>
+</div>
+
+<nav  class="outer-nav top horizontal">
+
+          <a class="icon-home"  href="/"><span>Home</span></a>
+
+          <a class="icon-news"  href="/archives"><span>Archive</span></a>
+
+          <a class="icon-github"  href="https://github.com/marcwebbie"><span>Github</span></a>
+
+          <a class="icon-twitter"  href="https://twitter.com/marcwebbie"><span>Twitter</span></a>
+
+</nav>
+
+</div>
+</body>
+</html>
