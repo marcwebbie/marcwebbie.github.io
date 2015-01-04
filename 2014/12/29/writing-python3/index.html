@@ -60,15 +60,15 @@
 </span>
     <h1 class="post-title">Write your code in Python 3</h1>
     <section class="post-content">
-      <p><a href="https://www.python.org/download/releases/3.0/" target="_blank" rel="external">Python 3</a> is there since 2008. However, we still find a lot of projects that doesn’t run on Python3. I’ve started programming in Python 3 when I started using <a href="https://www.archlinux.org/" target="_blank" rel="external">Arch Linux</a> as my main linux distribution a few years ago.</p>
+      <p><a href="https://www.python.org/download/releases/3.0/">Python 3</a> is there since 2008. However, we still find a lot of projects that doesn’t run on Python3. I’ve started programming in Python 3 when I started using <a href="https://www.archlinux.org/">Arch Linux</a> as my main linux distribution a few years ago.</p>
 <p><img src="python3.svg" alt=""></p>
 <hr>
 <h2 id="Why_Python_3?">Why Python 3?</h2>
-<p>Python 3 is the future of python. With Python 3 you will get all the <a href="http://asmeurer.github.io/python3-presentation/slides.html#1" target="_blank" rel="external">cool features</a> that are being added to the language. Core python developers have been focusing in Python 3 for a while now, and you should be using those features into your projects.</p>
-<p>Around the web I’ve seen many guesses on why Python 3 wasn’t fully adopted until now. This <a href="http://programmers.stackexchange.com/a/63935" target="_blank" rel="external">answer</a> on StackExchange is quite a good starting point to know more.</p>
+<p>Python 3 is the future of python. With Python 3 you will get all the <a href="http://asmeurer.github.io/python3-presentation/slides.html#1">cool features</a> that are being added to the language. Core python developers have been focusing in Python 3 for a while now, and you should be using those features into your projects.</p>
+<p>Around the web I’ve seen many guesses on why Python 3 wasn’t fully adopted until now. This <a href="http://programmers.stackexchange.com/a/63935">answer</a> on StackExchange is quite a good starting point to know more.</p>
 <h2 id="Starting_With_Python_3">Starting With Python 3</h2>
 <p>When you are starting a new project. Start it in <strong><code>Python3</code></strong>. You may hear people say to you: <em>“Don’t use Python 3, library x and y is not supported”</em> or worse, <em>“Why Python 3? Python 2 is much better”</em>…</p>
-<p>Most of great libraries and frameworks <a href="https://python3wos.appspot.com/" target="_blank" rel="external">supports Python 3</a> already. If they are not. They are probably working on <a href="Twisted is already">fixing this</a> situation right now. And you could help them if you have some sparetime. Check their issue pages. Starting a project in <strong><code>Python2</code></strong> today is probably not a good idea.</p>
+<p>Most of great libraries and frameworks <a href="https://python3wos.appspot.com/">supports Python 3</a> already. If they are not. They are probably working on <a href="Twisted is already">fixing this</a> situation right now. And you could help them if you have some sparetime. Check their issue pages. Starting a project in <strong><code>Python2</code></strong> today is probably not a good idea.</p>
 <p>The first step to start a project in python <strong><code>Python3</code></strong> should be adopting the <strong>“Python3 Mindset”</strong>. Having a “Python3 Mindset” means, thinking in <strong><code>Python3</code></strong> without coding the way that you used to in <strong><code>Python2</code></strong>. The more the time goes by, more libraries will be ported/available to <strong><code>Python3</code></strong>, so the “burden” of having to support <strong><code>Python2</code></strong> code progressively fades away.</p>
 <h3 id="Imcompatible_Python_2_Code">Imcompatible Python 2 Code</h3>
 <p>Python 3 has a new safe input function: <code>input()</code>. In Python 2 however, <code>input()</code> evaluates user entry:</p>
@@ -123,7 +123,7 @@
 &lt;type <span class="string">'str'</span>&gt;
 </code></pre><p>The idea is to remove this module when you decide not to support Python 2 any longer.</p>
 <h3 id="Using_2to3_on_Python_2_code">Using 2to3 on Python 2 code</h3>
-<p>You can also use a tool called <a href="http://www.diveintopython3.net/porting-code-to-python-3-with-2to3.html" target="_blank" rel="external">2to3</a> to port your code. Python 3 comes with 2to3 out of the box.</p>
+<p>You can also use a tool called <a href="http://www.diveintopython3.net/porting-code-to-python-3-with-2to3.html">2to3</a> to port your code. Python 3 comes with 2to3 out of the box.</p>
 <p>An example module <code>mymodule.py</code>:</p>
 <h5 id="Python2-1"><code>Python2</code></h5>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="comment"># ...</span></div><div class="line">value = range(<span class="number">1</span>, <span class="number">10</span>)[-<span class="number">1</span>]</div><div class="line"><span class="comment"># ...</span></div><div class="line"><span class="keyword">if</span> value &lt;&gt; <span class="number">9</span>:</div><div class="line">    <span class="keyword">print</span> <span class="string">"Value %s is not 9"</span> % value</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    <span class="keyword">print</span> <span class="string">"Value is 9"</span></div><div class="line"><span class="comment"># ...</span></div><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="keyword">assert</span> <span class="number">1</span> == <span class="number">2</span></div><div class="line"><span class="keyword">except</span> AssertionError, e:</div><div class="line">    <span class="keyword">print</span> e</div><div class="line">    <span class="keyword">print</span> urllib.urlopen(<span class="string">'https://docs.python.org/2/library/exceptions.html'</span>).read()</div></pre></td></tr></table></figure>
@@ -134,7 +134,7 @@
 
 <p><strong>2to3</strong> is a great tool to migrate existing <code>Python2</code> code. If you project is still in its early days, <strong>2to3</strong> may come handy as a tool.</p>
 <h3 id="Start_your_project_in_Python_2_then…">Start your project in Python 2 then…</h3>
-<p>Please, <strong>NOT</strong> so fast! If you have options, start with Python 3 from day one. It will be much harder to port your project to Python 3 once the project gets larger. Check this <a href="https://speakerdeck.com/pyconslides/python-3-dot-3-trust-me-its-better-than-python-2-dot-7-by-dr-brett-cannon" target="_blank" rel="external">presentation</a> by Brett Cannon to see why Python 3 is much better or his <a href="https://www.youtube.com/watch?v=f_6vDi7ywuA" target="_blank" rel="external">video</a> presentation if you prefer.</p>
+<p>Please, <strong>NOT</strong> so fast! If you have options, start with Python 3 from day one. It will be much harder to port your project to Python 3 once the project gets larger. Check this <a href="https://speakerdeck.com/pyconslides/python-3-dot-3-trust-me-its-better-than-python-2-dot-7-by-dr-brett-cannon">presentation</a> by Brett Cannon to see why Python 3 is much better or his <a href="https://www.youtube.com/watch?v=f_6vDi7ywuA">video</a> presentation if you prefer.</p>
 <h2 id="Workflow">Workflow</h2>
 <p>An example workflow for a Python 3 code that is backward compatible with Python 2 would be:</p>
 <ol>
@@ -152,21 +152,21 @@
 <h2 id="Learn_more">Learn more</h2>
 <p>There is a large amount of information about Python 3 around the web:</p>
 <ul>
-<li><a href="https://python3wos.appspot.com/" target="_blank" rel="external">Python 3 Wall of Superpowers</a></li>
-<li><a href="https://wiki.python.org/moin/Python2orPython3" target="_blank" rel="external">Python wiki</a></li>
+<li><a href="https://python3wos.appspot.com/">Python 3 Wall of Superpowers</a></li>
+<li><a href="https://wiki.python.org/moin/Python2orPython3">Python wiki</a></li>
 <li><a href="">Porting to python 3</a></li>
-<li><a href="http://pyvideo.org" target="_blank" rel="external">PyVideos</a></li>
+<li><a href="http://pyvideo.org">PyVideos</a></li>
 </ul>
 <p>There are also some great books on the subject:</p>
 <ul>
-<li><a href="http://chimera.labs.oreilly.com/books/1230000000393" target="_blank" rel="external">Python Cookbook 3rd Edition</a></li>
-<li><a href="http://www.diveintopython3.net/" target="_blank" rel="external">Dive into Python 3</a></li>
-<li><a href="http://python3porting.com" target="_blank" rel="external">Porting to Python 3</a></li>
+<li><a href="http://chimera.labs.oreilly.com/books/1230000000393">Python Cookbook 3rd Edition</a></li>
+<li><a href="http://www.diveintopython3.net/">Dive into Python 3</a></li>
+<li><a href="http://python3porting.com">Porting to Python 3</a></li>
 </ul>
 <p>Some videos as well:</p>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=sPiWg5jSoZI" target="_blank" rel="external">Python 3 Metaprogramming</a></li>
-<li><a href="https://www.youtube.com/watch?v=sPiWg5jSoZI" target="_blank" rel="external">Python 3 - Trust Me, It is Better than Python 2</a></li>
+<li><a href="https://www.youtube.com/watch?v=sPiWg5jSoZI">Python 3 Metaprogramming</a></li>
+<li><a href="https://www.youtube.com/watch?v=sPiWg5jSoZI">Python 3 - Trust Me, It is Better than Python 2</a></li>
 </ul>
 
     </section>
@@ -197,10 +197,6 @@
     </footer>
   </article>
   <nav class="pagination" role="pagination">
-    
-    <a class="newer-posts" href="/2015/01/04/design-a-plugin-structure-in-python/">
-        ← design a plugin structure in python
-    </a>
     
     <span class="icon-logo">•</span>
     
