@@ -5,14 +5,14 @@
 # Site
 title: Marcwebbie
 subtitle:
-description:
+description: Programming articles and tutorials
 author: Marcwebbie
 email: marcwebbie@gmail.com
-language:
+language: English
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://marcwebbie.github.io
+url: http://marcwebbie.io
 root: /
 permalink: :year/:month/:day/:title/
 tag_dir: tags
@@ -40,7 +40,7 @@ highlight:
   tab_replace:
 
 # Category & Tag
-default_category: uncategorized
+default_category: programming
 category_map:
 tag_map: true
 
