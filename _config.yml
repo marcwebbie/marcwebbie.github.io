@@ -79,9 +79,8 @@ disqus_shortname: marcwebbie
 # Extensions
 ## Plugins: https://github.com/hexojs/hexo/wiki/Plugins
 ## Themes: https://github.com/hexojs/hexo/wiki/Themes
-# theme: mnmlpress
-# theme: hexo
-# theme: casper
+# theme: backup/mnmlpress
+# theme: backup/casper
 theme: marcwebbie
 exclude_generator:
 
