@@ -22,11 +22,11 @@
    0. Includes - Ground zero
    ========================================================================== */
 @import url(normalize.css);
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+/* @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro); */
 /* @import url(http://fonts.googleapis.com/css?family=Maven+Pro); */
 /* @import url(http://fonts.googleapis.com/css?family=Oxygen); */
 /* @import url(http://fonts.googleapis.com/css?family=Roboto); */
-/* @import url(http://fonts.googleapis.com/css?family=Lato); */
+@import url(http://fonts.googleapis.com/css?family=Lato);
 
 /* ==========================================================================
    1. Icons - Sets up the icon font and respective classes
@@ -53,7 +53,7 @@ html { height: 100%; max-height: 100%; font-size: 64%; }
 body {
   height: 100%;
   max-height: 100%;
-  font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'SimSun', 'Droid Sans Fallback', sans-serif; font-size: 1.6rem;
+  font-family: 'Lato', 'Helvetica Neue', 'Helvetica', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'SimSun', 'Droid Sans Fallback', sans-serif; font-size: 1.8rem;
   line-height: 1.6em;
   color: #3A4145;
   background: white;
@@ -87,9 +87,9 @@ blockquote small:before { content: '\2014 \00A0'; }
 blockquote cite { font-weight: bold; }
 blockquote cite a { font-weight: normal; }
 mark { background-color: #ffc336; }
-code, tt { padding: 1px 3px; font-family: 'Ubuntu Mono', Inconsolata, Consolas, monospace, sans-serif; font-size: 0.85em; white-space: pre-wrap; border-bottom: 1px solid #e0e0e0; background: #f8f8f8; border-radius: 2px; }
-pre { -moz-box-sizing: border-box; box-sizing: border-box; margin: 1.2em 0; border-bottom: 1px solid #e4e4e4; width: 100%; padding: 1.62em; font-family: Monaco, Menlo, Consolas, monospace, "Courier New", sans-serif; font-size: 0.85em; line-height: 1.6em; white-space: pre; overflow: auto; background: #f8f8f8; border-radius: 2px; }
-pre code, tt { font-size: inherit; white-space: -moz-pre-wrap; white-space: pre-wrap; background: transparent; border: none; padding: 0; }
+code, tt { padding: 1px 3px; font-family: Inconsolata, Consolas, monospace, sans-serif; font-size: 1em; white-space: pre-wrap; border-bottom: 1px solid #e0e0e0; background: #f8f8f8; border-radius: 2px; }
+pre { -moz-box-sizing: border-box; box-sizing: border-box; margin: 1.2em 0; border-bottom: 1px solid #e4e4e4; width: 100%; padding: 1em; font-family: Inconsolata, Monaco, Menlo, Consolas, monospace, "Courier New", sans-serif; font-size: 0.8em; line-height: 1.6em; white-space: pre; overflow: auto; background: #f8f8f8; border-radius: 2px; }
+pre code, tt { font-size: 1em; white-space: -moz-pre-wrap; white-space: pre-wrap; background: transparent; border: none; padding: 0; }
 kbd { display: inline-block; margin-bottom: 0.4em; padding: 1px 8px; border: #ccc 1px solid; color: #666; text-shadow: #fff 0 1px 0; font-size: 0.9em; font-weight: bold; background: #f4f4f4; border-radius: 4px; box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2),  0 1px 0 0 #fff inset; }
 table { -moz-box-sizing: border-box; box-sizing: border-box; margin: 1.6em 0; width: 100%; max-width: 100%; background-color: transparent; }
 table th, table td { padding: 8px; line-height: 20px; text-align: left; vertical-align: top;/* border-top: 1px solid #efefef; */
@@ -195,7 +195,7 @@ margin on the iframe, cause it breaks stuff. */
 .video-container iframe, .video-container object, .video-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; margin-top: 0; }
 /* Hexo: Syntax Highlighter */
 
-figure.highlight { background: #fff; border-radius: 2px; border-bottom: 1px solid #e1e1e1; line-height: 1.45em; font-size: .8em; margin-bottom: 1em; overflow: auto; white-space: pre; word-wrap: normal; }
+figure.highlight { background: #fff; border-radius: 2px; border-bottom: 1px solid #e1e1e1; line-height: 1.45em; font-size: 1em; margin-bottom: 2.5em; overflow: auto; white-space: pre; word-wrap: normal; }
 figure.highlight figcaption { padding: 8px 10px; font-size: .8em; }
 figure.highlight table { margin: 0; }
 figure.highlight table > tbody > tr > td { padding: 0; background: #fff !important; }
