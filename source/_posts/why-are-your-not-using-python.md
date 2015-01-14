@@ -23,7 +23,7 @@ Some companies decide on the language they will implement their next application
 
 **Answer**: Python
 
->But I need to write that interface our 1-trillion-large-dinosaur-communication system...
+>But I need to write that interface to our 1-trillion-dollars-large-dinosaur-communication system...
 
 **Answer**: Python
 
