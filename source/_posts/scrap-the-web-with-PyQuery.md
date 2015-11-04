@@ -1,10 +1,12 @@
 title: Scrap The Web With PyQuery
+date: 2015-02-10 21:50:00
 category: tutorials
 tags:
 - Programming
 - Python
 - Scraping
 - WebMining
+
 ---
 
 
